@@ -1,0 +1,346 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e; /* Қара фон */
+    color: #e0e0e0; /* Ашық сұр мәтін */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 1.5s ease-in-out; /* Бүкіл бет жұмсақ шығуы */
+}
+h2 {
+    font-size: 26px;
+    color: #00aaff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+    text-shadow: 0px 0px 10px rgba(0, 170, 255, 0.6);
+    animation: titleAnimation 3s infinite alternate ease-in-out;
+}
+
+/* Түс ауыстыру және жеңіл қозғалыс анимациясы */
+@keyframes titleAnimation {
+    from {
+        color: #00aaff;
+        text-shadow: 0px 0px 10px rgba(0, 170, 255, 0.6);
+        transform: translateY(0);
+    }
+    to {
+        color: #ff4500;
+        text-shadow: 0px 0px 15px rgba(255, 69, 0, 0.8);
+        transform: translateY(-5px);
+    }
+}
+
+
+input#question {
+    width: 80%;
+    max-width: 400px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #00aaff;
+    border-radius: 8px;
+    outline: none;
+    background-color: #1e1e1e;
+    color: white;
+    transition: all 0.5s ease-in-out;
+    animation: colorShift 3s infinite alternate;
+}
+
+/* Түс өзгерту анимациясы */
+@keyframes colorShift {
+    from {
+        border-color: #00aaff;
+        box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+    }
+    to {
+        border-color: #ff4500;
+        box-shadow: 0 0 15px rgba(255, 69, 0, 0.7);
+    }
+}
+
+
+input#question:focus {
+    border-color: #ff00ff;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+
+/* Контентті ортаға келтіру */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #2a2a2a; /* Жеңіл қара сұр */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    animation: slideUp 1s ease-in-out; /* Жоғарыдан шығу */
+}
+
+/* Батырма стилі */
+button {
+    background: #00aaff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #0088cc;
+    transform: scale(1.1); /* Батырма сәл үлкейеді */
+}
+
+/* Логоларға жұмсақ анимация */
+.program-logo img {
+    width: 50px;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.program-logo img:hover {
+    transform: rotate(10deg) scale(1.2);
+    opacity: 0.8;
+}
+
+/* Анимация анықтамалары */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
+/* Аватар контейнері */
+.avatar-container {
+    position: relative;
+    display: inline-block;
+    width: 220px;
+    height: 220px;
+    animation: fadeIn 1.5s ease-in-out; /* Жұмсақ кіру анимациясы */
+}
+
+/* Аватар */
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.3s ease;
+}
+
+/* Hover кезінде анимация */
+.avatar:hover {
+    transform: scale(1.1) rotate(5deg); /* Сәл үлкейеді және бұрылады */
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.6); /* Жарық эффект */
+    opacity: 0.9;
+}
+
+/* Пульсация эффекті */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Кіру анимациясы */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Автоматты түрде пульсация жасау */
+.avatar-container:hover .avatar {
+    animation: pulse 1s infinite;
+}
+
+/* SVG айналатын мәтін */
+.circle-svg {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    left: 0px; /* Туралау */
+    top: -4px; /* Қажетіне қарай өзгертіңіз */
+    transform-origin: center; /* Айналу ортасын белгілейміз */
+    animation: rotateText 8s linear infinite;
+}
+
+.circle-text {
+    font-size: 14px;
+    fill: white;
+    text-anchor: middle; /* Орталыққа туралау */
+    dominant-baseline: middle; /* Тік туралау */
+}
+
+/* Мәтін айналу анимациясы */
+@keyframes rotateText {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.about-me-container {
+    margin: 40px auto;
+    padding: 25px;
+    max-width: 650px;
+    background: linear-gradient(135deg, #3a3a3a, #2e2e2e); /* Градиент қосылды */
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    color: #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-me-container:hover {
+    transform: translateY(-5px); /* Аздап көтерілетін анимация */
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.5);
+}
+
+.about-me-container h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.about-me-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+/* About Me */
+.about-me-container h2 {
+    font-size: 26px; /* Біршама үлкейтілді */
+    color: #00aaff; /* Ашық көк түс */
+    font-weight: bold;
+    text-transform: uppercase; /* Бас әріптермен жазылады */
+    letter-spacing: 1.5px; /* Әріп арасы кеңірек болады */
+    text-shadow: 0px 3px 8px rgba(0, 170, 255, 0.5); /* Жарық эффектісі қосылды */
+}
+
+
+.about-me-container p {
+    font-size: 17px; /* Сәл үлкейтілді */
+    line-height: 1.8; /* Оқу оңайырақ болу үшін аздап кеңейтілді */
+    color: #cccccc; /* Жарқын сұр түске жақындатылды */
+    text-align: justify; /* Мәтінді тегіс әрі ұқыпты көрсету */
+    font-weight: 400; /* Орташа қаріп салмағы */
+    padding: 5px 10px; /* Ішкі шеттерге сәл орын қалдырылды */
+}
+
+.programs-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px; /* Аватардың астында болу үшін */
+}
+
+/* Әр қатар */
+.programs-row {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Логотип стилі */
+.program-logo {
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    animation: fadeInOut 9s infinite;
+}
+
+.program-logo img {
+    width: 100%;
+    height: auto;
+}
+
+/* Логотип анимациясы */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: scale(0.8); }
+    10% { opacity: 1; transform: scale(1); }
+    90% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.8); }
+}
+
+/* Әр қатардағы логотиптерге кешіктіру қосу */
+.programs-row:nth-child(1) .program-logo:nth-child(1) { animation-delay: 0s; }
+.programs-row:nth-child(1) .program-logo:nth-child(2) { animation-delay: 1s; }
+.programs-row:nth-child(1) .program-logo:nth-child(3) { animation-delay: 2s; }
+.programs-row:nth-child(1) .program-logo:nth-child(4) { animation-delay: 3s; }
+.programs-row:nth-child(1) .program-logo:nth-child(5) { animation-delay: 4s; }
+.programs-row:nth-child(1) .program-logo:nth-child(6) { animation-delay: 5s; }
+.programs-row:nth-child(1) .program-logo:nth-child(7) { animation-delay: 6s; }
+.programs-row:nth-child(1) .program-logo:nth-child(8) { animation-delay: 7s; }
+.programs-row:nth-child(1) .program-logo:nth-child(9) { animation-delay: 8s; }
+
+.programs-row:nth-child(2) .program-logo:nth-child(1) { animation-delay: 1s; }
+.programs-row:nth-child(2) .program-logo:nth-child(2) { animation-delay: 2s; }
+.programs-row:nth-child(2) .program-logo:nth-child(3) { animation-delay: 3s; }
+.programs-row:nth-child(2) .program-logo:nth-child(4) { animation-delay: 4s; }
+.programs-row:nth-child(2) .program-logo:nth-child(5) { animation-delay: 5s; }
+.programs-row:nth-child(2) .program-logo:nth-child(6) { animation-delay: 6s; }
+.programs-row:nth-child(2) .program-logo:nth-child(7) { animation-delay: 7s; }
+.programs-row:nth-child(2) .program-logo:nth-child(8) { animation-delay: 8s; }
+.programs-row:nth-child(2) .program-logo:nth-child(9) { animation-delay: 9s; }
+
+.programs-row:nth-child(3) .program-logo:nth-child(1) { animation-delay: 2s; }
+.programs-row:nth-child(3) .program-logo:nth-child(2) { animation-delay: 3s; }
+.programs-row:nth-child(3) .program-logo:nth-child(3) { animation-delay: 4s; }
+.programs-row:nth-child(3) .program-logo:nth-child(4) { animation-delay: 5s; }
+.programs-row:nth-child(3) .program-logo:nth-child(5) { animation-delay: 6s; }
+.programs-row:nth-child(3) .program-logo:nth-child(6) { animation-delay: 7s; }
+.programs-row:nth-child(3) .program-logo:nth-child(7) { animation-delay: 8s; }
+.programs-row:nth-child(3) .program-logo:nth-child(8) { animation-delay: 9s; }
+.programs-row:nth-child(3) .program-logo:nth-child(9) { animation-delay: 10s; }
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: scale(0.8); }
+    10% { opacity: 1; transform: scale(1); }
+    90% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.8); }
+}
+#chat-box {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    background: #222;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.question, .answer {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.question {
+    background: #0078ff;
+    color: white;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.answer {
+    background: #555;
+    color: white;
+    align-self: flex-start;
+    text-align: left;
+}

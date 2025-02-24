@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нұрсаят Тулен</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="avatar-container">
+            <!-- SVG шеңбері (шекара + мәтін) -->
+            <svg viewBox="0 0 220 220" class="circle-svg">
+                <defs>
+                    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color: red; stop-opacity: 1" />
+                        <stop offset="50%" style="stop-color: blue; stop-opacity: 1" />
+                        <stop offset="100%" style="stop-color: green; stop-opacity: 1" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Шекара -->
+                <circle cx="110" cy="110" r="100" stroke="url(#borderGradient)" stroke-width="5" fill="none" />
+
+                <!-- Иврит мәтіні -->
+                <text class="circle-text">
+                    <textPath href="#textPath" startOffset="35%">
+                        אלוהיכם רחמנים וסולחים על חטאיכם המהירים
+                    </textPath>
+                </text>
+                <path id="textPath" d="M 110,110 m -100,0 a 100,100 0 1,1 200,0 a 100,100 0 1,1 -200,0" fill="none" />
+            </svg>
+
+            <!-- Аватар (шекара ішінде орналасады) -->
+            <img src="{{ url_for('static', filename='photo_5321414637104787661_y.jpg') }}" alt="Avatar" class="avatar">
+        </div>
+        <h2>ask your questions</h2>
+        <input type="text" id="question" placeholder="Enter your question...">
+        <button onclick="askQuestion()">Sending</button>
+        <div id="chat-box"></div>
+    </div>
+    <div class="about-me-container">
+        <h2>About Me</h2>
+        <p>
+            Hi! I am passionate about programming and always eager to learn new technologies.  
+            I enjoy solving complex problems, building creative projects, and experimenting with  
+            different programming languages and tools. My journey in technology has led me to explore  
+            web development, cybersecurity, and software engineering. I am constantly improving my  
+            skills and staying up-to-date with the latest innovations.  
+            In my free time, I love working on personal projects, diving into new frameworks, and  
+            optimizing code for better performance.  
+        </p>
+        
+
+        <!-- Логолар -->
+        <div class="programs-grid">
+            {% for i in range(3) %}
+                <div class="programs-row">
+                    {% for logo in ["python.png", "html.png", "css.png", "javascript.png", "java.png", "cpp.png", "blender.png", "aftereffects.png", "mysql.png"] %}
+                        <div class="program-logo">
+                            <img src="{{ url_for('static', filename='logos/' + logo) }}" alt="logo">
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
