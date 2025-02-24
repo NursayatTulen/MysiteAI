@@ -1,16 +1,17 @@
+let apiURL = "https://nursayattulen.onrender.com/ask"; // Локал емес, интернеттегі сервер
+
 function askQuestion() {
     let question = document.getElementById("question").value;
     if (question.trim() === "") return;
 
     let chatBox = document.getElementById("chat-box");
 
-    // Сұрақты қосу
     let questionElement = document.createElement("div");
     questionElement.classList.add("question");
     questionElement.innerText = "You: " + question;
     chatBox.appendChild(questionElement);
 
-    fetch("http://127.0.0.1:5000/ask", {
+    fetch(apiURL, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
